@@ -8,7 +8,7 @@ function Navbar () {
         <div className="navbar_container_cover_brand flex-centering-item">
           <Link className="navbar_container_cover_brand_link flex-centering-item" to="/">
             <img
-              className="navbar_container_cover_brand_link_img"
+              className="navbar_container_cover_brand_link_img no-select no-drag"
               src="./img/family.png"
               alt="brand of the site"
             />
@@ -26,7 +26,7 @@ function Navbar () {
         <div className="navbar_container_cover_basket">
           <Link to="/" className="navbar_container_cover_basket_link">
             <img
-              className="navbar_container_cover_basket_link_img"
+              className="navbar_container_cover_basket_link_img no-select no-drag"
               src="./img/basket.png"
               alt="shopping cart"
               height="35px"
@@ -40,14 +40,14 @@ function Navbar () {
         </div>
       </div>
       <div className="navbar_container_cover2">
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">News</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Information</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Profile</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Basket</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Contributors</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Stores</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">Contact us</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item" to="/">How to...</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">News</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Information</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Profile</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Basket</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contributors</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Stores</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contact us</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">How to...</Link>
       </div>
     </div>
   )
