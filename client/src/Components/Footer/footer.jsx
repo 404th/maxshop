@@ -58,12 +58,12 @@ function Footer () {
           </div>
         </div>
         <div className="footer_container_cover_social">
-          <span className="footer_container_cover_social_title">&copy; { year_footer } Onecom Design, All right reserved!</span>
+          <span className="footer_container_cover_social_title no-select no-drag">&copy; { year_footer } Onecom Design, All right reserved!</span>
           <div className="footer_container_cover_social_icons">
-            <Link to={"/"} className="fa fa-facebook"></Link>
-            <Link to={"/"} className="fa fa-twitter"></Link>
-            <Link to={"/"} className="fa fa-instagram"></Link>
-            <Link to={"/"} className="fa fa-linkedin"></Link>
+            <Link to={"/"} className="fa fa-facebook no-select no-drag"></Link>
+            <Link to={"/"} className="fa fa-twitter no-select no-drag"></Link>
+            <Link to={"/"} className="fa fa-instagram no-select no-drag"></Link>
+            <Link to={"/"} className="fa fa-linkedin no-select no-drag"></Link>
           </div>
         </div>
       </div>

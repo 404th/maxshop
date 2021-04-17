@@ -1,10 +1,12 @@
+import { Switch, Route } from 'react-router-dom'
 // Components
+import Home from './Components/Home/home'
 
 function Layout () {
   return (
-    <div>
-      Layouts
-    </div>
+    <Switch>
+      <Route path="/" component={ Home }/>
+    </Switch>
   )
 }
 

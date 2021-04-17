@@ -6,7 +6,7 @@ function Navbar () {
     <div className="navbar_container">
       <div className="navbar_container_cover">
         <div className="navbar_container_cover_brand flex-centering-item">
-          <Link className="navbar_container_cover_brand_link flex-centering-item" to="/">
+          <Link className="navbar_container_cover_brand_link no-select no-drag flex-centering-item" to="/">
             <img
               className="navbar_container_cover_brand_link_img no-select no-drag"
               src="./img/family.png"
@@ -20,7 +20,7 @@ function Navbar () {
             type="search"
             name="search-item"
             id="search-item"
-            placeholder="Type and hit enter"
+            placeholder="Type to search..."
           />
         </div>
         <div className="navbar_container_cover_basket">

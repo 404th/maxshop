@@ -1,0 +1,199 @@
+.home_container {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.home_container_cover {
+  max-width: 1440px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.home_container_cover_ads {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(1fr, 2);
+}
+
+.home_container_cover_ads_50 {
+  max-width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.home_container_cover_ads_50_cover {
+  max-width: 100%;
+  height: 100%;
+}
+
+.home_container_cover_ads_35 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  padding: 10px;
+}
+
+.home_container_cover_ads_35_cover {
+  width: 100%;
+  height: 100%;
+  background: url("./bg-image/2.jpg");
+}
+
+.ads_div_background {
+  position: relative;
+}
+
+.ads_div_background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: red;
+  transition: 0.5s;
+}
+
+.ads_div_background:hover.ads_div_background::before {
+  height: 40%;
+  width: 40%;
+}
+
+.ads_div_background_hover {
+  display: none;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  z-index: 90;
+  padding: 5px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 22px;
+}
+
+.ads_div_background:hover .ads_div_background_hover {
+  display: block;
+  height: 40%;
+  width: 40%;
+}
+
+.ads_div_background_hover_per {
+  font-weight: bold;
+  font-size: 34px;
+  color: #fff;
+}
+
+.ads_div_background_hover_title {
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+}
+
+.ads_div_background_hover_link {
+  font-weight: 300;
+  font-size: 15px;
+  color: #fff;
+  background-color: black;
+  border-radius: 5px;
+  padding: 3px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.ads_div_background_hover_link:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.ads_div_background_hover_link:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.home_container_cover_ads_35_cover_img {
+  width: 100%;
+}
+
+.home_container_cover_ads_25_cover_img {
+  width: 100%;
+}
+
+.home_container_cover_ads_25 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 10px;
+}
+
+.home_container_cover_ads_25_cover {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1440px) {
+  .home_container_cover {
+    width: 100%;
+  }
+
+  .home_container_cover_ads {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1fr, 2);
+  }
+
+  .home_container_cover_ads_50 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .home_container_cover_ads_35 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .home_container_cover_ads_25 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+
+@media (max-width: 860px) {
+  .ads_div_background:hover.ads_div_background::before {
+    height: 60%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 550px) {
+  .ads_div_background:hover.ads_div_background::before {
+    height: 60%;
+    width: 60%;
+  }
+
+  .ads_div_background_hover_per {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .ads_div_background_hover_title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    padding: 0;
+  }
+
+  .ads_div_background_hover_link {
+    font-weight: 300;
+    font-size: 10px;
+    color: #fff;
+    background-color: black;
+    border-radius: 3px;
+    padding: 1px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+}

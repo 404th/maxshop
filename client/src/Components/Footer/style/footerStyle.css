@@ -19,6 +19,7 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
+  padding: 5px;
 }
 
 .footer_container_cover_ad_img {
@@ -63,6 +64,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .footer_container_cover_navigator_group {
@@ -110,6 +112,7 @@
 }
 
 .footer_container_cover_social_title {
+  color: rgb(182, 182, 182);
   font-size: 12px;
   font-family: "Kumbh", sans-serif;
 }
