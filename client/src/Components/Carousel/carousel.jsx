@@ -4,8 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 import "./style/carouselStyle.css"
 
 let images = [
-  { aboutDiscount:"There is smth about discount.Lorem ipsum what uis up bordfhdfkj", url: "./img/1.jpg", alt:"for discount in home page carousel 1" },
-  { aboutDiscount:"There is smth about discount.Lorem ipsum what uis up bordfhdfkj", url: "./img/2.jpg", alt:"for discount in home page carousel 2" },
   { aboutDiscount:"There is smth about discount.Lorem ipsum what uis up bordfhdfkj", url: "./img/3.jpg", alt:"for discount in home page carousel 3" },
   { aboutDiscount:"There is smth about discount.Lorem ipsum what uis up bordfhdfkj", url: "./img/4.jpg", alt:"for discount in home page carousel 4" },
   { aboutDiscount:"There is smth about discount.Lorem ipsum what uis up bordfhdfkj", url: "./img/5.jpg", alt:"for discount in home page carousel 5" },
@@ -24,6 +22,7 @@ function OurCarousel(){
       autoPlay={ true }
       interval={ 2000 }
       autoFocus={ true }
+      infiniteLoop={ true }
       showIndicators={ false }
       showThumbs={ false }
       className="carousel_itself"

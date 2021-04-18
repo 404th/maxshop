@@ -41,7 +41,7 @@
 .footer_container_cover_ad_p_link {
   width: 200px;
   height: 65px;
-  color: red;
+  color: #ff793f;
   font-weight: 600;
   font-size: 16px;
   font-family: "Kumbh", sans-serif;
@@ -52,11 +52,13 @@
 }
 
 .footer_container_cover_ad_p_link:hover {
-  background-color: rgb(255, 140, 140);
+  background-color: #ff793f;
+  color: #fff;
 }
 
 .footer_container_cover_ad_p_link:active {
-  background-color: rgb(94, 94, 94);
+  background-color: #cd6133;
+  color: #fff;
 }
 
 /* footer navigator */

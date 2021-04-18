@@ -1,0 +1,66 @@
+.card_container {
+  height: 400px;
+  width: 320px;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card_container_header {
+  position: relative;
+  max-height: 250px !important;
+}
+
+.card_container_header_img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.card_container_footer {
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: rgb(255, 175, 56);
+  height: 45%;
+}
+
+.card_container_footer_price {
+  text-align: center;
+  color: #d45b0a;
+  font-weight: 900;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.card_container_footer_name {
+  font-family: "Kumbh";
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.card_container_footer_links {
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.card_container_footer_links_span {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.card_container_footer_links_span:hover {
+  background-color: #ff793f;
+}
+
+.card_container_footer_links_span:active {
+  background-color: #cd6133;
+}
+
+.card_container_footer_links_span_img {
+  width: 25px;
+}

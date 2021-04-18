@@ -4,6 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import OurCarousel from '../Carousel/carousel'
 import { Link } from 'react-router-dom'
 
+import Featured from '../Featured/featured'
+
 function Home () {
 
   return (
@@ -36,8 +38,37 @@ function Home () {
             </div>
           </div>
         </div>
-        <div className="home_container_cover_products"></div>
-        <div className="home_container_cover_brands"></div>
+        <div className="home_container_cover_title home_container_cover_title_featured"></div>
+        <div className="home_container_cover_products">
+          <Featured />
+        </div>
+        <div className="home_container_cover_title home_container_cover_title_brands"></div>
+        <div className="home_container_cover_brands">
+          <div className="home_container_cover_brands_brand home_container_cover_brands_brand_1">
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/9.jpg" alt=""/>
+            </div>
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/10.jpg" alt=""/>
+            </div>
+          </div>
+          <div className="home_container_cover_brands_brand home_container_cover_brands_brand_2">
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/3.jpg" alt=""/>
+            </div>
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/4.jpg" alt=""/>
+            </div>
+          </div>
+          <div className="home_container_cover_brands_brand home_container_cover_brands_brand_3">
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/5.jpg" alt=""/>
+            </div>
+            <div className="home_container_cover_brands_brand_div">
+              <img src="./img/8.jpg" alt=""/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
