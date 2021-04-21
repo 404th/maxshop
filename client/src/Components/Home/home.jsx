@@ -46,26 +46,26 @@ function Home () {
         <div className="home_container_cover_brands">
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_1">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/9.jpg" alt=""/>
+              <img src="./img/9.jpg" alt="commercial brand 1"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/10.jpg" alt=""/>
+              <img src="./img/10.jpg" alt="commercial brand 2"/>
             </div>
           </div>
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_2">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/3.jpg" alt=""/>
+              <img src="./img/3.jpg" alt="commercial brand 3"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/4.jpg" alt=""/>
+              <img src="./img/4.jpg" alt="commercial brand 4"/>
             </div>
           </div>
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_3">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/5.jpg" alt=""/>
+              <img src="./img/5.jpg" alt="commercial brand 5"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/8.jpg" alt=""/>
+              <img src="./img/8.jpg" alt="commercial brand 6"/>
             </div>
           </div>
         </div>

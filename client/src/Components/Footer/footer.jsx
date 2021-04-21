@@ -1,21 +1,19 @@
 import "./style/footerStyle.css"
 import { Link } from 'react-router-dom'
+import Ads from '../Ads/ads'
 
+import { useContext } from 'react'
+import { MyContext } from '../../GlobalState'
 
 function Footer () {
   let year_footer = new Date().getFullYear()
 
+  const { username, age } = useContext(MyContext)
+
   return (
     <div className="footer_container">
       <div className="footer_container_cover">
-        <div className="footer_container_cover_ad">
-          <img className="footer_container_cover_ad_img no-select no-drag" src="./img/food.png" alt="Delivering service" height="80px"/>
-          <p className="footer_container_cover_ad_p truncate">
-            <span className="footer_container_cover_ad_p_span">FREE SHIPPING </span>
-              offered by ONECOM - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dignissimos!
-          </p>
-          <Link className="footer_container_cover_ad_p_link no-select no-drag flex-centering-item" to="/">LEARN MORE</Link>
-        </div>
+        <Ads />
         <div className="footer_container_cover_navigator">
           <div className="footer_container_cover_navigator_group">
             <div className="footer_container_cover_navigator_group_title">
@@ -25,6 +23,8 @@ function Footer () {
             <Link className="footer_container_cover_navigator_group_link no-drag" to="/">Delivery Information</Link>
             <Link className="footer_container_cover_navigator_group_link no-drag" to="/">Privacy Policy</Link>
             <Link className="footer_container_cover_navigator_group_link no-drag" to="/">Terms & Policy</Link>
+            <Link className="footer_container_cover_navigator_group_link no-drag" to="/">{ username }</Link>
+            <Link className="footer_container_cover_navigator_group_link no-drag" to="/">{ age }</Link>
           </div>
           <div className="footer_container_cover_navigator_group">
             <div className="footer_container_cover_navigator_group_title">

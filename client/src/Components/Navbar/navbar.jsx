@@ -40,7 +40,7 @@ function Navbar () {
         </div>
       </div>
       <div className="navbar_container_cover2">
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">News</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/products">Products</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Information</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Profile</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Basket</Link>

@@ -17,6 +17,10 @@ function Featured(){
         <Card url="./img/7.jpg" />
         <Card url="./img/8.jpg" />
       </div>
+      <div className="featured_container_cover_indicators">
+        <button className="featured_container_cover_indicators_prev no-drag no-select">Prev</button>
+        <button className="featured_container_cover_indicators_next no-drag no-select">Next</button>
+      </div>
     </div>
   )
 }
