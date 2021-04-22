@@ -35,9 +35,19 @@
   font-family: "Kumbh";
   font-weight: 400;
   font-size: 18px;
-  text-align: center;
+  width: 100% !important;
   margin-top: 10px;
   color: #fff;
+  text-align: center;
+}
+
+.card_container_footer_name a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.card_container_footer_name a:hover {
+  color: #d45b0a;
 }
 
 .card_container_footer_links {

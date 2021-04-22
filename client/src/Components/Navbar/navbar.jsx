@@ -9,7 +9,7 @@ function Navbar () {
           <Link className="navbar_container_cover_brand_link no-select no-drag flex-centering-item" to="/">
             <img
               className="navbar_container_cover_brand_link_img no-select no-drag"
-              src="./img/family.png"
+              src="/img/family.png"
               alt="brand of the site"
             />
           </Link>
@@ -27,7 +27,7 @@ function Navbar () {
           <Link to="/" className="navbar_container_cover_basket_link">
             <img
               className="navbar_container_cover_basket_link_img no-select no-drag"
-              src="./img/basket.png"
+              src="/img/basket.png"
               alt="shopping cart"
               height="35px"
             />
