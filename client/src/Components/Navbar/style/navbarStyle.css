@@ -135,12 +135,28 @@
     /* grid-template-columns: 200px auto 300px; */
     grid-template-columns: 1fr 360px 1.5fr;
   }
+
+  .navbar_container_cover_search_input::placeholder {
+    font-size: 0.8em;
+  }
 }
 
 @media (max-width: 660px) {
   .navbar_container_cover {
     width: 100%;
     /* grid-template-columns: 200px auto 300px; */
-    grid-template-columns: 1fr 360px 1.5fr;
+    grid-template-columns: 1fr 260px 1.5fr;
+  }
+
+  .navbar_container_cover_basket_summarize {
+    display: none;
+  }
+
+  /* .navbar_container_cover_search {
+    width: 300px;
+  } */
+
+  .navbar_container_cover_search_input::placeholder {
+    font-size: 0.7em;
   }
 }

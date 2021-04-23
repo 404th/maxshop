@@ -41,13 +41,9 @@ function Navbar () {
       </div>
       <div className="navbar_container_cover2">
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/products">Products</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Information</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Profile</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/shopping">Basket</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contributors</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Stores</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contact us</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">How to...</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Profile</Link>
       </div>
     </div>
   )
