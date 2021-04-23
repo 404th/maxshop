@@ -14,7 +14,7 @@ function Product () {
         <div className='product_container_cover_prod'>
           <div className="product_container_cover_prod_itself">
             <div className="product_container_cover_prod_itself_img">
-              <div className="product_container_cover_prod_itself_img_cover flex-centering-item">
+              <div className="product_container_cover_prod_itself_img_cover">
                 <img
                   className="product_container_cover_prod_itself_img_cover_img"
                   src="/img/1.jpg"

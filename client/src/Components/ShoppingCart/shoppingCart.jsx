@@ -6,38 +6,22 @@ function ShoppingCart() {
       <table className="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
-            <th scope="col">Handle</th>
+            <th scope="col">IMAGE</th>
+            <th scope="col">PRODUCT NAME</th>
+            <th scope="col">QUANTITY</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">TOTAL</th>
+            <th scope="col">ACTION</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>Larry the Bird</td>
-            <td>Larry the Bird</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
+            <td className="shopping-cart-img"> 1</td>
+            <td className="shopping-cart-name">Mark</td>
+            <td className="shopping-cart-quantity">Otto</td>
+            <td className="shopping-cart-price">Otto</td>
+            <td className="shopping-cart-total">Otto</td>
+            <td className="shopping-cart-action">@mdo</td>
           </tr>
         </tbody>
       </table>
