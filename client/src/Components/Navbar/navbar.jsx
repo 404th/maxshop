@@ -24,7 +24,7 @@ function Navbar () {
           />
         </div>
         <div className="navbar_container_cover_basket">
-          <Link to="/" className="navbar_container_cover_basket_link">
+          <Link to="/shopping" className="navbar_container_cover_basket_link">
             <img
               className="navbar_container_cover_basket_link_img no-select no-drag"
               src="/img/basket.png"
@@ -43,7 +43,7 @@ function Navbar () {
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/products">Products</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Information</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Profile</Link>
-        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Basket</Link>
+        <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/shopping">Basket</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contributors</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Stores</Link>
         <Link className="navbar_container_cover2_link flex-centering-item no-drag" to="/">Contact us</Link>
