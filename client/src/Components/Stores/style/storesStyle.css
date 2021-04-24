@@ -1,0 +1,45 @@
+.stores-container {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.stores-container-cover {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.stores-item {
+  position: relative;
+  padding-left: 80px;
+  background-color: rgba(243, 156, 18, 1) !important;
+  color: #fff;
+}
+
+.stores-item:hover {
+  background-color: rgba(230, 126, 34, 1) !important;
+  color: #fff;
+}
+
+.stores-item:active {
+  opacity: 0.7 !important;
+  color: #fff;
+}
+
+.stores-brand-image {
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1460px) {
+  .bs-example {
+    width: 90%;
+  }
+}
+
+@media (max-width: 660px) {
+  .bs-example {
+    width: 100%;
+  }
+}

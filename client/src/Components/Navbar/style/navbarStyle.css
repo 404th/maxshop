@@ -117,7 +117,7 @@
   color: #fff;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1460px) {
   .navbar_container_cover {
     width: 100%;
     grid-template-columns: 200px auto 300px;
