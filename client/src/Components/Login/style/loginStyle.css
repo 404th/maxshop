@@ -1,0 +1,24 @@
+.login-container {
+  width: 100%;
+  height: 75vh;
+  background: rgb(235, 235, 235);
+}
+
+.login-container-cover {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.login-container-cover-form {
+  width: 330px !important;
+  height: 460px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 1440px) {
+  .login-container-cover {
+    width: 100%;
+  }
+}

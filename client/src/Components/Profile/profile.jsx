@@ -1,6 +1,10 @@
 import "./style/profleStyle.css"
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
+import { Link } from 'react-router-dom'
+
+import { defaultImageLink } from '../../store'
 
 function Profile () {
   return (
@@ -9,12 +13,12 @@ function Profile () {
         <div className="padding flex-centering-item">
           <div className="row container d-flex justify-content-center">
               <div className="col-xl-12 col-md-12">
-                  <div className="card user-card-full">
+                  <div className="pro-card user-card-full">
                       <div className="row m-l-0 m-r-0">
                           <div className="col-lg-4 col-md-12 col-sm-12 bg-c-lite-green user-profile">
                               <div className="card-block text-center text-white">
                                   <div className="m-b-25">
-                                    <img className="profile-avatar img-radius" src="/img/2.jpg" width="80px" height="80px" alt="User-Profile-Image" />
+                                    <img className="profile-avatar img-radius" src={ defaultImageLink } width="80px" height="80px" alt="User-Profile-Image" />
                                   </div>
                                   <h6 className="f-w-600">Hembo Tingor</h6>
                                   <p>Store manager</p>
@@ -64,6 +68,10 @@ function Profile () {
             <span>Edit</span>
             <EditIcon className="profile-settings-container-cover-button-icon" />
           </button>
+          <Link to="/login" className="btn btn-primary profile-settings-container-cover-button profile-settings-container-cover-button-edit flex-centering-item">
+            <span>Logout</span>
+            <ExitToAppIcon className="profile-settings-container-cover-button-icon" />
+          </Link>
           <button className="btn btn-danger profile-settings-container-cover-button profile-settings-container-cover-button-delete flex-centering-item">
             <span>Delete accout</span>
             <DeleteForeverIcon className="profile-settings-container-cover-button-icon" />

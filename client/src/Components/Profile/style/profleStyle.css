@@ -22,7 +22,6 @@
 }
 
 .profile-settings-container-cover-button-edit-icon {
-  /* font-size: 18px !important; */
   padding: 3px;
 }
 
@@ -32,10 +31,6 @@
   }
 }
 
-/* body {
-  background-color: #f9f9fa;
-} */
-
 .padding {
   padding: 3rem !important;
 }
@@ -44,7 +39,7 @@
   overflow: hidden;
 }
 
-.card {
+.pro-card {
   border-radius: 5px;
   -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);

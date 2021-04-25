@@ -3,9 +3,9 @@ import "./style/productStyle.css"
 import Ads from '../Ads/ads'
 import Filter from '../Filter/filter'
 
-function Product () {
+import { defaultImageLink } from '../../store'
 
-  // const { id } = useParams()
+function Product () {
 
   return (
     <div className="product_container">
@@ -17,7 +17,7 @@ function Product () {
               <div className="product_container_cover_prod_itself_img_cover">
                 <img
                   className="product_container_cover_prod_itself_img_cover_img"
-                  src="/img/1.jpg"
+                  src={ defaultImageLink }
                   alt="About this product"
                 />
               </div>

@@ -6,6 +6,8 @@ import Product from './Components/Product/product'
 import ShoppingCart from './Components/ShoppingCart/shoppingCart'
 import Stores from './Components/Stores/stores'
 import Profile from './Components/Profile/profile'
+import Login from './Components/Login/login'
+import Register from './Components/Register/register'
 
 function Layout () {
 
@@ -17,6 +19,8 @@ function Layout () {
       <Route exact path="/shopping" component={ ShoppingCart }/>
       <Route exact path="/stores" component={ Stores }/>
       <Route exact path="/profile" component={ Profile }/>
+      <Route exact path="/register" component={ Register }/>
+      <Route exact path="/login" component={ Login }/>
     </Switch>
   )
 }

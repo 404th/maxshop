@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 import Featured from '../Featured/featured'
 
+import { defaultImageLink } from '../../store'
+
 function Home () {
 
   return (
@@ -24,7 +26,7 @@ function Home () {
                 <p className="ads_div_background_hover_title">discount</p>
                 <Link className="ads_div_background_hover_link no-select no-drag" to="/">Get it now!</Link>
               </div>
-              <img className="home_container_cover_ads_35_cover_img" src="./img/8.jpg" alt="Summer discount"/>
+              <img className="home_container_cover_ads_35_cover_img" src={ defaultImageLink } alt="Summer discount"/>
             </div>
           </div>
           <div className="home_container_cover_ads_25">
@@ -34,7 +36,7 @@ function Home () {
                 <p className="ads_div_background_hover_title">discount</p>
                 <Link className="ads_div_background_hover_link no-select no-drag" to="/">Get it now!</Link>
               </div>
-              <img className="home_container_cover_ads_25_cover_img" src="./img/10.jpg" alt="Autumn discount"/>
+              <img className="home_container_cover_ads_25_cover_img" src={ defaultImageLink } alt="Autumn discount"/>
             </div>
           </div>
         </div>
@@ -46,26 +48,26 @@ function Home () {
         <div className="home_container_cover_brands">
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_1">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/9.jpg" alt="commercial brand 1"/>
+              <img src={ defaultImageLink } alt="commercial brand 1"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/10.jpg" alt="commercial brand 2"/>
+              <img src={ defaultImageLink } alt="commercial brand 2"/>
             </div>
           </div>
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_2">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/3.jpg" alt="commercial brand 3"/>
+              <img src={ defaultImageLink } alt="commercial brand 3"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/4.jpg" alt="commercial brand 4"/>
+              <img src={ defaultImageLink } alt="commercial brand 4"/>
             </div>
           </div>
           <div className="home_container_cover_brands_brand home_container_cover_brands_brand_3">
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/5.jpg" alt="commercial brand 5"/>
+              <img src={ defaultImageLink } alt="commercial brand 5"/>
             </div>
             <div className="home_container_cover_brands_brand_div">
-              <img src="./img/8.jpg" alt="commercial brand 6"/>
+              <img src={ defaultImageLink } alt="commercial brand 6"/>
             </div>
           </div>
         </div>
