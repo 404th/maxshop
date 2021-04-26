@@ -1,4 +1,4 @@
-import "./style/profleStyle.css"
+import "./style/profileStyle.css"
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'

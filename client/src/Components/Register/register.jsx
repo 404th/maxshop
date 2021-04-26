@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import "./style/registerStyle.css"
 import { Link } from 'react-router-dom'
+import { MyContext } from '../../GlobalState'
 
-function Register () {
-
+function Register (props) {
+  let { gSetRegisterUser, gRegisterUser } = useContext( MyContext )
   let [ newUser, setNewUser ] = useState({
     username:"",
     email:"",
@@ -13,7 +14,6 @@ function Register () {
 
   const handleSetNewUser = props => {
     const { value, name } = props.target
-    console.log( newUser )
 
     setNewUser({
       ...newUser,
@@ -22,7 +22,6 @@ function Register () {
   }
 
   const handleClearNewUser = () => {
-    console.log( newUser )
 
     setNewUser({
       username:"",
@@ -31,6 +30,23 @@ function Register () {
       confirm_password:""
     })
   }
+
+  const handleSendUserData = async () => {
+    // sending data to Server
+    let cominData = await gSetRegisterUser( newUser )
+    // change url
+    if (cominData) {
+      props.history.push("/")
+    } else {
+      console.log( "Nothing came!" )
+    }
+    // clear inputs
+    handleClearNewUser()
+  }
+
+  useEffect( () => {
+    console.log( gRegisterUser )
+  }, [ gRegisterUser ] )
 
   return (
     <div className="register-container flex-centering-item">
@@ -85,12 +101,13 @@ function Register () {
                   required="required"
                   value={ newUser.confirm_password }
                   onChange={ e => handleSetNewUser(e) }
-                />
+                  />
               </div>
             <div className="form-group">
               <button
                 className="btn btn-success btn-lg btn-block"
                 type="button"
+                onClick={ () => handleSendUserData() }
               >Register Now</button>
               <button
                 className="btn btn-outline-secondary btn-lg btn-block"

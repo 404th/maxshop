@@ -5,6 +5,7 @@ const createError = require("../../../errorMaker")
   // Checking for validation errors
   const ERRORS = validationResult(req)
   if ( !ERRORS.isEmpty() ){
+    console.log( ERRORS.errors )
     return res.status(403).json({
       data:null,
       errors:[ ...ERRORS.errors ]
@@ -15,7 +16,7 @@ const createError = require("../../../errorMaker")
   try {
 
     const { email, username, password } = req.body
-
+    
     // check for if user exist
     let existUser = await User.findOne({ email, username })
     if ( !existUser ){

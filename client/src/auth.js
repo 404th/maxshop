@@ -1,11 +1,16 @@
+import { useContext } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import { isAuth } from './store'
+import { MyContext } from './GlobalState'
 
 function Auth ( Component ) {
 
+  const { gIsVerified } = useContext(MyContext)
+
+  console.log( gIsVerified )
+
   return (
-    isAuth ? <Component /> : <Redirect to="/login" />
+    gIsVerified ? <Component /> : <Redirect to="/login" />
   )
 }
 
