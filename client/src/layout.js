@@ -14,8 +14,6 @@ import Auth from './auth'
 import Navbar from './Components/Navbar/navbar'
 import Footer from './Components/Footer/footer'
 
-import { isAuth } from './store'
-
 function Layout () {
 
   return (

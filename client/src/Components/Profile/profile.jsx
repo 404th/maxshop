@@ -18,7 +18,7 @@ function Profile () {
                           <div className="col-lg-4 col-md-12 col-sm-12 bg-c-lite-green user-profile">
                               <div className="card-block text-center text-white">
                                   <div className="m-b-25">
-                                    <img className="profile-avatar img-radius" src={ defaultImageLink } width="80px" height="80px" alt="User-Profile-Image" />
+                                    <img className="profile-avatar img-radius" src={ defaultImageLink } width="80px" height="80px" alt="User-Profile-" />
                                   </div>
                                   <h6 className="f-w-600">Hembo Tingor</h6>
                                   <p>Store manager</p>
@@ -50,9 +50,21 @@ function Profile () {
                                       </div>
                                   </div>
                                   <ul className="social-link list-unstyled m-t-40 m-b-10">
-                                      <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i className="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
-                                      <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i className="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
-                                      <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i className="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
+                                      <li>
+                                        <a href="https://www.facebook.com" data-toggle="tooltip" data-placement="bottom">
+                                          <i className="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i> 
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="https://www.twitter.com/404th_" data-toggle="tooltip" data-placement="bottom">
+                                          <i className="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i> 
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a href="https://www.instagram.com/doniyor.obidjonovich" data-toggle="tooltip" data-placement="bottom">
+                                          <i className="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i> 
+                                        </a>
+                                      </li>
                                   </ul>
                               </div>
                           </div>

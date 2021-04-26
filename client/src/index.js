@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import "normalize.css";
@@ -9,13 +9,13 @@ import { BrowserRouter } from 'react-router-dom'
 import GlobalStore from './GlobalState'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <BrowserRouter>
       <GlobalStore>
         <App />
       </GlobalStore>
     </BrowserRouter>
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 

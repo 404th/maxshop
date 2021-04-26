@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require("mongoose")
 const cors = require("cors")
 require("dotenv").config({ path:"./.env" })
-// mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise
 
 // middlewares
 app.use( cors() )
@@ -30,6 +30,8 @@ startServer()
 // !!! connecting to MongoDB
 
 // initializing routes
+const authRoute = require("./Routes/route_auth")
+app.use( "/auth", authRoute )
 
 // !!! initializing routes
 // listening PORT
