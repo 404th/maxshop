@@ -1,12 +1,22 @@
+import { useContext } from 'react'
 import "./style/profileStyle.css"
 import EditIcon from '@material-ui/icons/Edit'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import { Link } from 'react-router-dom'
-
+import { MyContext } from '../../GlobalState'
 import { defaultImageLink } from '../../store'
 
 function Profile () {
+
+  const { gSetIsVerified, gSetCurrentUser } = useContext( MyContext )
+  const handleLogoutUser = () => {
+    // clear current user data
+    gSetCurrentUser( null )
+    // set "false" after logout
+    gSetIsVerified( false )
+  }
+
   return (
     <div className="">
       <div className="page-content page-container" id="page-content">
@@ -80,7 +90,11 @@ function Profile () {
             <span>Edit</span>
             <EditIcon className="profile-settings-container-cover-button-icon" />
           </button>
-          <Link to="/login" className="btn btn-primary profile-settings-container-cover-button profile-settings-container-cover-button-edit flex-centering-item">
+          <Link
+            to="/login"
+            className="btn btn-primary profile-settings-container-cover-button profile-settings-container-cover-button-edit flex-centering-item"
+            onClick={ () => handleLogoutUser() }
+          >
             <span>Logout</span>
             <ExitToAppIcon className="profile-settings-container-cover-button-icon" />
           </Link>

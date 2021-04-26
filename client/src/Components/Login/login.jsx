@@ -17,8 +17,6 @@ function Login () {
       ...loginUser,
       [ name ]: value
     })
-
-    console.log( loginUser )
   }
 
   const handleClearLoginUser = () => {
@@ -32,7 +30,7 @@ function Login () {
     <div className="login-container flex-centering-item">
       <div className="login-container-cover flex-centering-item">
         <div className="register-container-cover-form signup-form">
-          <form action="/examples/actions/confirmation.php" method="post">
+          <form>
           <h2>Login</h2>
           <p className="hint-text">Log in to your atmosphere</p>
           <div className="form-group">

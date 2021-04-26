@@ -1,10 +1,12 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import "./style/registerStyle.css"
 import { Link } from 'react-router-dom'
 import { MyContext } from '../../GlobalState'
+import axios from 'axios'
+import { serverURL } from '../../store'
 
 function Register (props) {
-  let { gSetRegisterUser, gRegisterUser } = useContext( MyContext )
+  let { gSetCurrentUser, gSetIsVerified } = useContext( MyContext )
   let [ newUser, setNewUser ] = useState({
     username:"",
     email:"",
@@ -22,7 +24,6 @@ function Register (props) {
   }
 
   const handleClearNewUser = () => {
-
     setNewUser({
       username:"",
       email:"",
@@ -32,27 +33,51 @@ function Register (props) {
   }
 
   const handleSendUserData = async () => {
-    // sending data to Server
-    let cominData = await gSetRegisterUser( newUser )
-    // change url
-    if (cominData) {
-      props.history.push("/")
+    if ( newUser.confirm_password === newUser.password ) {
+      // sending data to Server
+      try {
+        let cominData = await axios.post( `${ serverURL }/auth/register`, {
+          username: newUser.username,
+          email:newUser.email,
+          password: newUser.password
+        } )
+        // check if data comin
+        if ( cominData ){
+          // set "true" if data come
+          gSetIsVerified( true )
+          // save current user as a global to use Front
+          gSetCurrentUser( cominData.data.data )
+          // change page url
+          props.history.push("/")
+          // clear inputs
+          handleClearNewUser()
+        } else {
+          // clear current user if registering is failed
+          gSetCurrentUser( {} )
+          // set "false" if error occured
+          gSetIsVerified( false )
+        }
+      } catch (err) {
+        gSetCurrentUser( {} )
+        // set "false" if data not come
+        gSetIsVerified(false )
+        // error
+        if (err) {
+          console.log( err )
+        } else {
+          console.error( "Data sent but response not come!" )
+        }
+      }
     } else {
-      console.log( "Nothing came!" )
+      console.error("Confirmation has been failed!")
     }
-    // clear inputs
-    handleClearNewUser()
   }
-
-  useEffect( () => {
-    console.log( gRegisterUser )
-  }, [ gRegisterUser ] )
 
   return (
     <div className="register-container flex-centering-item">
       <div className="register-container-cover flex-centering-item">
         <div className="register-container-cover-form signup-form">
-          <form action="/examples/actions/confirmation.php" method="post">
+          <form>
           <h2>Register</h2>
           <p className="hint-text no-select no-drag">Create your account. It's free and only takes a minute.</p>
           <div className="form-group">

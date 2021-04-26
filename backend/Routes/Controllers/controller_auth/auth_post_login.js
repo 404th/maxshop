@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt")
   const ERRORS = validationResult(req)
   if ( !ERRORS.isEmpty() ){
     return res.status(403).json({
-      data:null,
+      data:[],
       errors:[ ...ERRORS.errors ]
     })
   }
@@ -28,11 +28,11 @@ const bcrypt = require("bcrypt")
             param:"login",
             location:"auth_post_login.js"
           },
-          errors: null
+          errors: []
         })
       } else {
         return res.status(403).json({
-          data: null,
+          data: [],
           errors:[
             createError( new Error( "Password is not matched!" ), "Password is wrong", "login", "auth_post_login.js" )
           ]
@@ -41,7 +41,7 @@ const bcrypt = require("bcrypt")
 
     } else {
       return res.status(200).json({
-        data:null,
+        data:[],
         errors:[
           createError( new Error("User not found!"), "You are not registered!", "login", "auth_post_login.js" )
         ]
@@ -51,7 +51,7 @@ const bcrypt = require("bcrypt")
   } catch( err ){
     console.log( err )
     return res.status(500).json({
-      data:null,
+      data:[],
       errors:[
         createError( err, "Internal Server error while logging in!", "login", "auth_post_login.js" )
       ]

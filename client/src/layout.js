@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 // Components
 import Home from './Components/Home/home'
 import Products from './Components/Products/products'
@@ -18,8 +18,7 @@ function Layout () {
     <Switch>
         <Route exact path="/register" component={ Register }/>
         <Route exact path="/login" component={ Login }/>
-        <div>
-          {/* { isAuth && <Navbar /> } */}
+        <>
           <Navbar />
           <Route exact path="/" component={ () => Auth(Home) }/>
           <Route exact path="/products" component={ () => Auth(Products) }/>
@@ -27,10 +26,9 @@ function Layout () {
           <Route exact path="/shopping" component={ () => Auth(ShoppingCart) }/>
           <Route exact path="/stores" component={ () => Auth(Stores) }/>
           <Route exact path="/profile" component={ () => Auth(Profile) }/>
-          {/* { isAuth && <Footer /> } */}
           <Footer />
-          <Redirect to="/login" />
-        </div>
+          {/* <Redirect to="/login" /> */}
+        </>
     </Switch>
   )
 }
