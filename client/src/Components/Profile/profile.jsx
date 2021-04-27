@@ -12,7 +12,7 @@ function Profile () {
   const { gSetIsVerified, gSetCurrentUser } = useContext( MyContext )
   const handleLogoutUser = () => {
     // clear current user data
-    gSetCurrentUser( null )
+    gSetCurrentUser({})
     // set "false" after logout
     gSetIsVerified( false )
   }

@@ -1,5 +1,5 @@
 const { User } = require("../../../Schema/schema_auth")
-const auth_post_login = validationResult => async (req, res, next) => {
+const auth_post_login = validationResult => async (req, res) => {
 const createError = require("../../../errorMaker")
 const bcrypt = require("bcrypt")
 
@@ -25,7 +25,7 @@ const bcrypt = require("bcrypt")
           data: {
             value: existUser,
             msg:"User logged in!",
-            param:"login",
+            param:"email",
             location:"auth_post_login.js"
           },
           errors: []
@@ -34,16 +34,16 @@ const bcrypt = require("bcrypt")
         return res.status(403).json({
           data: [],
           errors:[
-            createError( new Error( "Password is not matched!" ), "Password is wrong", "login", "auth_post_login.js" )
+            createError( new Error( "Password is not matched!" ), "Password is wrong", "password", "auth_post_login.js" )
           ]
         })
       }
 
     } else {
-      return res.status(200).json({
+      return res.status(403).json({
         data:[],
         errors:[
-          createError( new Error("User not found!"), "You are not registered!", "login", "auth_post_login.js" )
+          createError( new Error("User not found!"), "You are not registered!", "email", "auth_post_login.js" )
         ]
       })
     }
@@ -53,7 +53,7 @@ const bcrypt = require("bcrypt")
     return res.status(500).json({
       data:[],
       errors:[
-        createError( err, "Internal Server error while logging in!", "login", "auth_post_login.js" )
+        createError( err, "Internal Server error while logging in!", "email", "auth_post_login.js" )
       ]
     })
   }

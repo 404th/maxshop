@@ -11,6 +11,8 @@ export function useAxios () {
       let cominData = await axios({ url, method, data })
       //
       if ( cominData ) {
+        // clear inputs
+        handleClearNewUser()
         // change page location
         props.history.push( changedUrl )
         return cominData.data
@@ -32,8 +34,6 @@ export function useAxios () {
     } finally {
       // set loading off
       setLoading( false )
-      // clear inputs
-      handleClearNewUser()
       console.log( "useAxios is completed work" )
     }
   }

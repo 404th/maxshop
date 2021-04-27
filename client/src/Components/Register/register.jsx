@@ -40,15 +40,15 @@ function Register (props) {
     username:"",
     email:"",
     password:"",
-    confirmation_password:""
+    confirm_password:""
   })
 
   useEffect( () => {
     console.log( registerErrors )
-  }, [] )
+  }, [ registerErrors ] )
 
   const handleSendDataClick = async () => {
-    if ( newUser.password === newUser.confirmation_password ){
+    if ( newUser.password === newUser.confirm_password ) {
       let cominData = await handleContactServer(
         "POST",
         `${ serverURL }/auth/register`,
@@ -63,18 +63,40 @@ function Register (props) {
         handleClearNewUser
       )
       console.log( cominData )
+      console.log( cominData.errors.length )
       // check for errors
-      if ( cominData.errors.isEmpty() ){
+      if ( cominData.errors.length < 1 ){
         console.log( cominData.data )
       } else {
-        console.log( cominData.errors )
+        // set errors
+        cominData.errors.map( err => {
+          setRegisterErrors({
+            ...registerErrors,
+            [ err.param ]: err.msg
+          })
+          // clear errors after 5s
+          setTimeout( () =>  setRegisterErrors({
+            username:"",
+            email:"",
+            password:"",
+            confirm_password:""
+          }), 5000 )
+          return 0
+        } )
       }
-      // setRegisterErrors({})
+      
     } else {
       setRegisterErrors({
         ...registerErrors,
-        confirmation_password:"Confirmation password is not matched!"
+        confirm_password:"Password is not matched!"
       })
+      // clear errors after 5s
+      setTimeout( () =>  setRegisterErrors({
+        username:"",
+        email:"",
+        password:"",
+        confirm_password:""
+      }), 5000 )
     }
   }
 
@@ -89,60 +111,63 @@ function Register (props) {
             </div>
               <div className="form-group">
                 <input
-                  className="form-control is-invalid"
+                  className={`form-control ${ registerErrors.username !== "" ? "is-invalid" : "" } `}
                   autoComplete="off"
                   type="text"
                   name="username"
                   placeholder="Username"
+                  disabled={ loading }
                   value={ newUser.username }
                   onChange={ e => handleSetNewUser(e) }
                 />
                 <div className="invalid-feedback">
-                  Enter valid username!
+                  { registerErrors.username }
                 </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control is-invalid"
+                  className={`form-control ${ registerErrors.email !== "" ? "is-invalid" : "" } `}
                   autoComplete="off"
                   type="email"
                   name="email"
                   placeholder="Email"
+                  disabled={ loading }
                   value={ newUser.email }
                   onChange={ e => handleSetNewUser(e) }
                 />
                 <div className="invalid-feedback">
-                  Enter valid email!
+                  { registerErrors.email }
                 </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control is-invalid"
+                  className={`form-control ${ registerErrors.password !== "" ? "is-invalid" : "" } `}
                   autoComplete="off"
                   type="password"
                   name="password"
                   placeholder="Password"
+                  disabled={ loading }
                   aria-autocomplete="list"
                   value={ newUser.password }
                   onChange={ e => handleSetNewUser(e) }
                 />
                 <div className="invalid-feedback">
-                  Password is failed!
+                  { registerErrors.password }
                 </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control is-invalid"
+                  className={`form-control ${ registerErrors.confirm_password !== "" ? "is-invalid" : "" } `}
                   autoComplete="off"
                   type="password"
                   name="confirm_password"
                   placeholder="Confirm Password"
-                  required="required"
+                  disabled={ loading }
                   value={ newUser.confirm_password }
                   onChange={ e => handleSetNewUser(e) }
                   />
-                  <div className="invalid-feedback hide-error">
-                    Confirmation is failed!
+                  <div className="invalid-feedback">
+                    { registerErrors.confirm_password }
                   </div>
               </div>
             <div className="form-group">

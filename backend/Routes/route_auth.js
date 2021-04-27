@@ -6,8 +6,8 @@ const auth_post_register = require("./Controllers/controller_auth/auth_post_regi
 
 //  PORT - /auth/login
 router.post( "/login", [
-  check( "email", "Insert valid email!" ).isEmail(),
-  check( "password", "Password must be powerfull and longer than 5 chars!" ).isLength({ min:5 })
+  check( "email", "Insvalid email!" ).isEmail(),
+  check( "password", "Invalid password!" ).isLength({ min:5 })
 ], auth_post_login( validationResult ) )
 
 //  PORT - /auth/register
