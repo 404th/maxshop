@@ -5,7 +5,6 @@ const createError = require("../../../errorMaker")
   // Checking for validation errors
   const ERRORS = validationResult(req)
   if ( !ERRORS.isEmpty() ){
-    console.log( ERRORS.errors )
     return res.status(403).json({
       data:[],
       errors:[ ...ERRORS.errors ]
@@ -36,7 +35,7 @@ const createError = require("../../../errorMaker")
       }
       // send server error if not saved to DB
       return res.status( 500 ).json({
-        data: [],
+        data: {},
         errors:[
           createError( new Error("Not saved to DB"), "User is not saved to DB", "register", "auth_post_register.js"  )
         ]
@@ -44,7 +43,7 @@ const createError = require("../../../errorMaker")
 
     } else {
       return res.status(409).json({
-        data: [],
+        data: {},
         errors:[
           createError( new Error("Email registered before!"), "You are registered before!", "register", "auth_post_register.js" )
         ]
@@ -54,7 +53,7 @@ const createError = require("../../../errorMaker")
   } catch( err ){
     console.log( err )
     return res.status(500).json({
-      data: [],
+      data: {},
       errors:[
         createError( new Error("Internal Server error!"), "Internal Server error while registering!", "register", "auth_post_register.js" )
       ]

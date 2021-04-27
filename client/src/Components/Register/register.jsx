@@ -1,12 +1,16 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import "./style/registerStyle.css"
 import { Link } from 'react-router-dom'
-import { MyContext } from '../../GlobalState'
-import axios from 'axios'
+// import { MyContext } from '../../GlobalState'
+// import axios from 'axios'
 import { serverURL } from '../../store'
+import { useAxios } from '../../useAxios'
 
 function Register (props) {
-  let { gSetCurrentUser, gSetIsVerified } = useContext( MyContext )
+  // let { gSetCurrentUser, gSetIsVerified } = useContext( MyContext )
+  const [ loading, setLoading ] = useState( false )
+  const { handleContactServer } = useAxios()
+
   let [ newUser, setNewUser ] = useState({
     username:"",
     email:"",
@@ -32,44 +36,45 @@ function Register (props) {
     })
   }
 
-  const handleSendUserData = async () => {
-    if ( newUser.confirm_password === newUser.password ) {
-      // sending data to Server
-      try {
-        let cominData = await axios.post( `${ serverURL }/auth/register`, {
+  const [ registerErrors, setRegisterErrors ] = useState({
+    username:"",
+    email:"",
+    password:"",
+    confirmation_password:""
+  })
+
+  useEffect( () => {
+    console.log( registerErrors )
+  }, [] )
+
+  const handleSendDataClick = async () => {
+    if ( newUser.password === newUser.confirmation_password ){
+      let cominData = await handleContactServer(
+        "POST",
+        `${ serverURL }/auth/register`,
+        {
           username: newUser.username,
-          email:newUser.email,
+          email: newUser.email,
           password: newUser.password
-        } )
-        // check if data comin
-        if ( cominData ){
-          // set "true" if data come
-          gSetIsVerified( true )
-          // save current user as a global to use Front
-          gSetCurrentUser( cominData.data.data )
-          // change page url
-          props.history.push("/")
-          // clear inputs
-          handleClearNewUser()
-        } else {
-          // clear current user if registering is failed
-          gSetCurrentUser( {} )
-          // set "false" if error occured
-          gSetIsVerified( false )
-        }
-      } catch (err) {
-        gSetCurrentUser( {} )
-        // set "false" if data not come
-        gSetIsVerified(false )
-        // error
-        if (err) {
-          console.log( err )
-        } else {
-          console.error( "Data sent but response not come!" )
-        }
+        },
+        props,
+        "/login",
+        setLoading,
+        handleClearNewUser
+      )
+      console.log( cominData )
+      // check for errors
+      if ( cominData.errors.isEmpty() ){
+        console.log( cominData.data )
+      } else {
+        console.log( cominData.errors )
       }
+      // setRegisterErrors({})
     } else {
-      console.error("Confirmation has been failed!")
+      setRegisterErrors({
+        ...registerErrors,
+        confirmation_password:"Confirmation password is not matched!"
+      })
     }
   }
 
@@ -84,7 +89,7 @@ function Register (props) {
             </div>
               <div className="form-group">
                 <input
-                  className="form-control"
+                  className="form-control is-invalid"
                   autoComplete="off"
                   type="text"
                   name="username"
@@ -92,10 +97,13 @@ function Register (props) {
                   value={ newUser.username }
                   onChange={ e => handleSetNewUser(e) }
                 />
+                <div className="invalid-feedback">
+                  Enter valid username!
+                </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control"
+                  className="form-control is-invalid"
                   autoComplete="off"
                   type="email"
                   name="email"
@@ -103,10 +111,13 @@ function Register (props) {
                   value={ newUser.email }
                   onChange={ e => handleSetNewUser(e) }
                 />
+                <div className="invalid-feedback">
+                  Enter valid email!
+                </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control"
+                  className="form-control is-invalid"
                   autoComplete="off"
                   type="password"
                   name="password"
@@ -115,10 +126,13 @@ function Register (props) {
                   value={ newUser.password }
                   onChange={ e => handleSetNewUser(e) }
                 />
+                <div className="invalid-feedback">
+                  Password is failed!
+                </div>
               </div>
               <div className="form-group">
                 <input
-                  className="form-control"
+                  className="form-control is-invalid"
                   autoComplete="off"
                   type="password"
                   name="confirm_password"
@@ -127,12 +141,15 @@ function Register (props) {
                   value={ newUser.confirm_password }
                   onChange={ e => handleSetNewUser(e) }
                   />
+                  <div className="invalid-feedback hide-error">
+                    Confirmation is failed!
+                  </div>
               </div>
             <div className="form-group">
               <button
                 className="btn btn-success btn-lg btn-block"
                 type="button"
-                onClick={ () => handleSendUserData() }
+                onClick={ () => handleSendDataClick() }
               >Register Now</button>
               <button
                 className="btn btn-outline-secondary btn-lg btn-block"
