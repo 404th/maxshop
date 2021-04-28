@@ -49,7 +49,7 @@ function Login (props) {
   
     // check for errors
     if ( cominData.errors.length < 1 ){
-      console.log( cominData.data )
+      console.log( cominData.data.value )
       // after login set user as a verified
       gSetIsVerified( true )
       // change url

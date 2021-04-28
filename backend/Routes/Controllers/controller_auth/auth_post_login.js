@@ -2,6 +2,7 @@ const { User } = require("../../../Schema/schema_auth")
 const auth_post_login = validationResult => async (req, res) => {
 const createError = require("../../../errorMaker")
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
 
   // Checking for validation errors
   const ERRORS = validationResult(req)
@@ -18,9 +19,11 @@ const bcrypt = require("bcrypt")
     // check for if user exist
     let existUser = await User.findOne({ email })
     if ( existUser ){
+      // check if password is matched
       let match = await bcrypt.compare( password, existUser.password )
-
       if( match ){
+        // creating token
+        let userToken = await jwt.sign( { id: existUser._id }, process.env.SECRET_KEY )
         return res.status(200).json({
           data: {
             value: existUser,
