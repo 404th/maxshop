@@ -9,13 +9,15 @@ import { defaultImageLink } from '../../store'
 
 function Profile () {
 
-  const { gSetIsVerified, gSetCurrentUser } = useContext( MyContext )
+  const { gSetIsVerified, gSetCurrentUser, gCurrentUser } = useContext( MyContext )
   const handleLogoutUser = () => {
     // clear current user data
     gSetCurrentUser({})
     // set "false" after logout
     gSetIsVerified( false )
   }
+
+  console.log( gCurrentUser )
 
   return (
     <div className="">
@@ -30,7 +32,7 @@ function Profile () {
                                   <div className="m-b-25">
                                     <img className="profile-avatar img-radius" src={ defaultImageLink } width="80px" height="80px" alt="User-Profile-" />
                                   </div>
-                                  <h6 className="f-w-600">Hembo Tingor</h6>
+                                  <h6 className="f-w-600">{ gCurrentUser.username }</h6>
                                   <p>Store manager</p>
                                   <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                               </div>
@@ -41,7 +43,7 @@ function Profile () {
                                   <div className="row">
                                       <div className="col-sm-6">
                                           <p className="m-b-10 f-w-600">Email</p>
-                                          <h6 className="text-muted f-w-400">umarov.doniyor.2001@gmail.com</h6>
+                                          <h6 className="text-muted f-w-400">{ gCurrentUser.email }</h6>
                                       </div>
                                       <div className="col-sm-6">
                                           <p className="m-b-10 f-w-600">Phone</p>

@@ -55,7 +55,7 @@ function Login (props) {
       // change url
       props.history.push( "/" )
       // after login set user's data as a global
-      gSetCurrentUser( cominData.data )
+      gSetCurrentUser( cominData.data.value )
     } else {
       //
       cominData.errors.map( err => {
