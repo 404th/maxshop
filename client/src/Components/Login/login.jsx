@@ -56,6 +56,8 @@ function Login (props) {
       props.history.push( "/" )
       // after login set user's data as a global
       gSetCurrentUser( cominData.data.value )
+      // set token to localStorage
+      localStorage.setItem( "bearerToken", cominData.data.value.bearerToken )
     } else {
       //
       cominData.errors.map( err => {

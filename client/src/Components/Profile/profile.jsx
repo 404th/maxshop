@@ -15,6 +15,8 @@ function Profile () {
     gSetCurrentUser({})
     // set "false" after logout
     gSetIsVerified( false )
+    // clear token
+    localStorage.removeItem("bearerToken")
   }
 
   console.log( gCurrentUser )
